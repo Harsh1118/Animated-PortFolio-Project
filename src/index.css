@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* ✅ Correct: Use only :root (remove @theme completely) */
 
 :root {
   --background: 255 255 255;
