@@ -20,7 +20,7 @@ const tabContents = {
 };
 console.log(harsh);
 // > Always learning. Always building.`,
-  
+
   'infra.yaml': `services:
   api-gateway:
     image: nestjs-api:latest
@@ -36,7 +36,7 @@ console.log(harsh);
     image: postgres:15-alpine
   redis-cache:
     image: redis:alpine`,
-    
+
   'interests.json': `{
   "focus": "Backend Engineering & Systems Design",
   "interests": [
@@ -57,7 +57,7 @@ export default function Hero() {
     let index = 0;
     const fullText = tabContents[activeTab];
     setDisplayedText('');
-    
+
     const interval = setInterval(() => {
       setDisplayedText(fullText.substring(0, index + 3));
       index += 3;
@@ -65,7 +65,7 @@ export default function Hero() {
         clearInterval(interval);
       }
     }, 12);
-    
+
     return () => clearInterval(interval);
   }, [activeTab]);
 
@@ -107,7 +107,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Intro */}
           <motion.div
             variants={containerVariants}
@@ -185,8 +185,8 @@ export default function Hero() {
               </motion.a>
 
               <motion.a
-                href="/Harsh_Dubey_Resume_7.pdf"
-                download="Harsh_Dubey_Resume_7.pdf"
+                href="/Harsh_Dubey_Resume_8.pdf"
+                download="Harsh_Dubey_Resume_8.pdf"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="px-6 py-3.5 rounded-xl glass border border-white/5 hover:border-white/10 text-slate-200 hover:text-white font-semibold text-sm flex items-center gap-2"
@@ -266,24 +266,22 @@ export default function Hero() {
                   <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
                 </div>
-                
+
                 {/* Tabs */}
                 <div className="flex items-center gap-2 overflow-x-auto mx-4 scrollbar-none">
                   {(Object.keys(tabContents) as Array<keyof typeof tabContents>).map(tab => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`px-3 py-1.5 rounded-lg font-mono text-[10px] md:text-xs transition-all flex items-center gap-1.5 clickable ${
-                        activeTab === tab
+                      className={`px-3 py-1.5 rounded-lg font-mono text-[10px] md:text-xs transition-all flex items-center gap-1.5 clickable ${activeTab === tab
                           ? 'bg-[#0F1117]/90 text-cyan-300 font-semibold border border-white/5'
                           : 'text-slate-500 border border-transparent hover:text-slate-300 hover:bg-white/5'
-                      }`}
+                        }`}
                     >
                       {/* Visual indicator dot matching file type */}
-                      <span className={`w-1.5 h-1.5 rounded-full ${
-                        tab.endsWith('.ts') ? 'bg-blue-400' :
-                        tab.endsWith('.yaml') ? 'bg-amber-400' : 'bg-green-400'
-                      }`} />
+                      <span className={`w-1.5 h-1.5 rounded-full ${tab.endsWith('.ts') ? 'bg-blue-400' :
+                          tab.endsWith('.yaml') ? 'bg-amber-400' : 'bg-green-400'
+                        }`} />
                       {tab}
                     </button>
                   ))}
